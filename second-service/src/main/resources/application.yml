@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 0
 
 spring:
   application:
@@ -11,3 +11,5 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}} # 0 port 사용시 instance-id 중복되는것을 방지
